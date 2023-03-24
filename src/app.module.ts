@@ -3,12 +3,14 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 import { MongooseModule } from '@nestjs/mongoose';
+import { ConfigModule } from '@nestjs/config';
 @Module({
   imports: [
     UsersModule,
-    MongooseModule.forRoot(
-      'mongodb+srv://admin:polapolA1@cluster0.i86favp.mongodb.net/?retryWrites=true&w=majority',
-    ),
+    ConfigModule.forRoot({
+      envFilePath: ['.env', 'env.development.local', 'env.development'],
+    }),
+    MongooseModule.forRoot(process.env.DATABASE_URI),
   ],
   controllers: [AppController],
   providers: [AppService],
