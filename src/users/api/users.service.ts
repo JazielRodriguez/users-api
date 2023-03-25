@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { User, UserDocument } from '../schemas/user.schema';
+import { User, UserDocument } from '../../schemas/user.schema';
 import { Model } from 'mongoose';
 
 @Injectable()
@@ -10,10 +10,18 @@ export class UsersService {
     const users = await this.userModel.find();
     return users;
   }
-  async updateUser() {
+  async addUser(name: string, age: number) {
+    const result = await this.userModel.insertMany([{ name, age }]);
+    return result;
+  }
+  async deleteUser(userId: string) {
+    const result = await this.userModel.deleteOne({ _id: userId });
+    return result;
+  }
+  async updateUser(userId: string, age: number) {
     const result = await this.userModel.updateOne(
-      { name: 'Jaziel' },
-      { $set: { age: 18 } },
+      { _id: userId },
+      { $set: { age: age } },
     );
     return result;
   }
