@@ -4,6 +4,6 @@ export class AppController {
   @Get()
   @Render('index')
   root() {
-    return { author: 'Jaziel Rodriguez' };
+    return { author: 'https://github.com/JazielRodriguez/users-api' };
   }
 }

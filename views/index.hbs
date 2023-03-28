@@ -4,10 +4,36 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="/css/index.css">
   <title>The Users API</title>
 </head>
 <body>
-  <h1>Users API - Author {{author}}</h1>
+  <header>
+    <div class="container header-content">
+      <h1>The Users API</h1>
+      <nav>
+        <a href="/docs/endpoints">Endpoints</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div class="container info-content">
+      <div class="info-content-child">
+        <h2>The Users API.</h2>
+        <p>You wanna test your frontend apps fetching external data, you wanna practice your knowledge creating an app with basic CRUD operations. The Users API is your playground</p>
+        <div class="content-links">
+          <a href="{{author}}">View on GitHub</a>
+          <a href="/tutorial">Getting started</a>
+        </div>
+      </div>
+      <div class="info-content-child">
+        <img src="/images/avatares.png" alt="">
+      </div>
+    </div>
+  </main>
 </body>
 </html>

@@ -22,8 +22,8 @@ export class UsersController {
   @Post('add')
   @Header('content-type', 'application/json')
   addUser(@Req() request: Request) {
-    const { name, age } = request.body;
-    return this.usersService.addUser(name, age);
+    const bodyParams = request.body;
+    return this.usersService.addUser(bodyParams);
   }
 
   @Delete('user/delete')
@@ -34,7 +34,7 @@ export class UsersController {
   @Patch('update')
   @Header('content-type', 'application/json')
   updateUser(@Req() request: Request) {
-    const { userId, age } = request.body;
-    return this.usersService.updateUser(userId, age);
+    const bodyParams = request.body;
+    return this.usersService.updateUser(bodyParams);
   }
 }

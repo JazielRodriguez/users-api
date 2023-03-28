@@ -7,5 +7,7 @@ export class User {
   name: string;
   @Prop({ required: true })
   age: number;
+  @Prop({ require: true })
+  dateOfBirth: string;
 }
 export const UserSchema = SchemaFactory.createForClass(User);
